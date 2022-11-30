@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Peixaria Do Cebola</title>
+</head>
+<body>
+    <header>
+        <img src="assets/img/fish-4316274_960_720.webp" alt="" height="100" width="100">
+        <h1>PEIXARIA DO CEBOLA</h1>
+    </header>
+    <div><h2 id="h2estoque">Preencha os estoques</h2></div>
+
+
+    <section id="estoque">
+    <p>Bolinho de peixe <br> <input type="number" id="inputb"></p> 
+    <p>Camarão limpo <br> <input type="number" id="inputcl"></p>
+    <p>Camarão sujo <br> <input type="number" id="inputcs"></p>
+    <p>Salmão <br> <input type="number" id="inputs"></p>
+    <p>Traira <br> <input type="number" id="inputt"></p>
+    </section>
+    
+    <section id="preços">   
+        <p>Bolinho de peixe <br> R$ 25.00 <br> 12 un</p>
+        <p>Camarão limpo <br> R$ 12.00 kg</p>
+        <p>Camarão sujo <br> R$ 8.00 kg</p>
+        <p>Salmão <br> R$ 9.50 kg</p>
+        <p>Traira <br> R$ 7.00 kg</p>
+    </section>
+
+    <section id="areadecompra">
+        <p>Informe o nome do cliente <br> <input type="text" id="nome"></p>
+        <br>
+        </section>
+        <section id="area2">
+        <p>Bolinho de peixe <br> <input type="number" id="comprab"></p> 
+        <p>Camarão limpo <br> <input type="number" id="compracl"></p> 
+        <p>Camarão sujo <br> <input type="number" id="compracs"></p> 
+        <p>Salmão <br> <input type="number" id="compras"></p> 
+        <p>Traira <br> <input type="number" id="comprat"></p> 
+    </section>
+    <section id="butons">
+        <input type="button" value="Finalizar" id="botao" onclick="Finalizar()">
+        <input type="button" value="Novo Cliente" id="botao" onclick="NovoCliente()">
+    </section>
+    <section>
+        <p>Cliente: <span id="cliente"> ... </span></p>
+        <p>Total a pagar: <span id="total">  ... </span></p>
+        <hr>
+        <p>Relatório do dia</p>
+<div class="container">
+    <div id="relatorio">
+
+    </div>
+     
+</div>
+       
+    </section>
+
+<script>
+//------------------------------------------------------------------------------------------------------------------------------------------------------------//
+ function Finalizar(){
+ var inputb = document.getElementById('inputb') 
+ var inputcl = document.getElementById('inputcl')
+ var inputcs = document.getElementById('inputcs')
+ var inputs = document.getElementById('inputs')
+ var inputt = document.getElementById('inputt')
+
+ var comprab = document.getElementById('comprab')
+ var compracl = document.getElementById('compracl')
+ var compracs = document.getElementById('compracs')
+ var compras = document.getElementById('compras')
+ var comprat = document.getElementById('comprat')
+
+ var relatorio = document.getElementById('relatorio')
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------//
+ var totalcomprab = inputb.value - comprab.value
+ inputb.value = Number(totalcomprab)
+
+ var totalcompracl = inputcl.value - compracl.value
+ inputcl.value = Number(totalcompracl)
+
+ var totalcompracs = inputcs.value - compracs.value
+ inputcs.value = Number(totalcompracs)
+
+ var totalcompras = inputs.value - compras.value
+ inputs.value = Number(totalcompras)
+
+ var totalcomprat = inputt.value - comprat.value
+ inputt.value = Number(totalcomprat)
+
+ comprab = Number(comprab.value)
+ compracl = Number(compracl.value)
+ compracs = Number(compracs.value)
+ compras = Number(compras.value)
+ comprat = Number(comprat.value)
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------//
+var cliente = document.getElementById('cliente') 
+let total = document.getElementById('total')
+
+//total = Number(total.value)
+
+cliente.innerHTML = (nome.value)
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------//
+ var b = 25.00
+ var cl = 12.00 
+ var cs = 8.00
+ var s = 9.50
+ var t = 7.00
+ 
+ var finalb = comprab * b
+ var finalcl = compracl * cl
+ var finalcs = compracs * cs
+ var finals = compras * s
+ var finalt = comprat * t
+
+ var totalfinal = Number(finalb) + Number(finalcl) + Number(finalcs) + Number(finals) + Number(finalt)
+
+ total.innerHTML = (`R$ ${totalfinal}`)
+
+
+ relatorio.innerHTML += (`Cliente ${nome.value}... <br>  R$ ${totalfinal} <br>`)
+ 
+ 
+   
+}
+function NovoCliente(){
+    let total = document.getElementById('total')
+   // inputb.value = (`  `)
+   // inputcl.value = (`  `)
+  //  inputcs.value = (`  `)
+  //  inputt.value = (`  `)
+  //  inputs.value = (`  `)
+
+    comprab.value = (`  `)
+    compracl.value = (`  `)
+    compracs.value = (`  `)
+    comprat.value = (`  `)
+    compras.value = (`  `)
+
+    cliente.innerHTML = (`  `)
+    nome.value = (`  `)
+
+    total.innerHTML = ''
+
+   // pessoa.innerHTML = (`${nome.value}`)
+ 
+}
+</script>
+    
+</body>
+</html>

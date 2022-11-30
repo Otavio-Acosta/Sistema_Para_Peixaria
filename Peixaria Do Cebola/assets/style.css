@@ -1,0 +1,74 @@
+*{
+    font-family: cursive;
+}
+#estoque{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* HEADER */
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    background-color: rgb(164, 208, 247);
+    border-bottom: solid;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+/* HEADER */
+#h2estoque{
+    margin-left: 5rem;
+}
+#inputb, #inputcl, #inputcs, #inputt, #inputs{
+    padding: 1rem;
+    border-radius: 10px;
+}
+p{
+    font-size: 1.2rem;
+}
+#preços{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(164, 208, 247);
+    border: solid 2px black;
+    border-radius: 10px;
+}
+#areadecompra{
+    font-size: 1.2rem;
+    margin-left: 4rem;
+    
+}
+#nome{
+    padding: 1rem;
+    border-radius: 10px;
+}
+#area2{
+    display: flex;
+    justify-content: space-around;
+}
+#comprab, #compracl, #compracs, #compras, #comprat{
+    padding: 1rem;
+    border-radius: 10px;
+}
+#botao{
+    padding: 1rem;
+    margin-top: 2rem ;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#butons{
+    margin-left: 4rem;
+    
+}
+#botao:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(164, 208, 247);
+    border: solid 2px black;
+
+}
+.container{
+    display: flex;
+}
